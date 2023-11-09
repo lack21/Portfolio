@@ -6,6 +6,7 @@ Tools Used :
    • SCSS  
    • CSS  
 
-![image](https://github.com/lack21/Portfolio/assets/100687592/951bcc23-b91f-4c9d-a518-2eec6ad1624c)
+![image](https://github.com/lack21/Portfolio/assets/100687592/19d7de3f-f5f8-4876-88bd-19496961acbc)
+
 
 Link : https://lack21.github.io/Portfolio/
