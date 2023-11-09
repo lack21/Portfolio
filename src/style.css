@@ -13,7 +13,7 @@ body::before {
   content: "";
   width: 100%;
   height: 75vh;
-  background: linear-gradient(to bottom, rgb(50, 25, 120), transparent);
+  background: linear-gradient(to bottom, rgb(50, 25, 125), transparent);
   position: absolute;
   pointer-events: none;
 }
@@ -29,6 +29,24 @@ img {
   text-align: center;
 }
 
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(5rem);
+    -webkit-transform: translateY(5rem);
+    -moz-transform: translateY(5rem);
+    -ms-transform: translateY(5rem);
+    -o-transform: translateY(5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+}
 .nav-bar {
   position: fixed;
   top: 1.75rem;
@@ -80,11 +98,15 @@ img {
   font-size: 4.725rem;
   color: #fff;
   opacity: 0.9;
+  animation: fade 2s ease forwards;
+  -webkit-animation: fade 2s ease forwards;
 }
 .header .sub-title {
   font-size: 1.725rem;
   color: #fff;
   opacity: 0.9;
+  animation: fade 2s ease forwards;
+  -webkit-animation: fade 2s ease forwards;
 }
 
 .skills,
@@ -154,6 +176,8 @@ img {
   padding: 15rem 0 10rem;
   display: grid;
   place-content: center;
+  animation: fade 2s ease forwards;
+  -webkit-animation: fade 2s ease forwards;
 }
 .about .text {
   width: min(700px, 90vw);
@@ -172,6 +196,8 @@ img {
   display: grid;
   place-content: center;
   padding-top: 15rem;
+  animation: fade 2s ease forwards;
+  -webkit-animation: fade 2s ease forwards;
 }
 .projects .row {
   width: min(1100px, 90vw);
@@ -257,6 +283,11 @@ img {
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
   opacity: 0;
 }
 .projects .row .item .layer img {
@@ -278,6 +309,8 @@ img {
   padding: 15rem 0 10rem;
   display: grid;
   place-content: center;
+  animation: fade 2s ease forwards;
+  -webkit-animation: fade 2s ease forwards;
 }
 .contact.first {
   padding-top: 7.5rem;

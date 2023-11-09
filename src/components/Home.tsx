@@ -17,8 +17,8 @@ function Home() {
   return (
     <>
       <header className="header">
-        <h1 className="title">Hi I'm Luka</h1>
-        <p className="sub-title">Front End Developer</p>
+        <h1 className="title">Hi, I'm Luka!</h1>
+        <p className="sub-title">Front-End Developer</p>
       </header>
 
       <section className="skills">
