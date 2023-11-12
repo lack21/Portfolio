@@ -12,8 +12,23 @@ import pythonImage from "../assets/Python.png";
 import georgianFlagImage from "../assets/Georgian_Flag.png";
 import englishFlagImage from "../assets/English_Flag.png";
 import russianFlagImage from "../assets/Russian_Flag.png";
+import { useState } from "react";
 
 function Home() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  function ResetForm() {
+    setTimeout(() => {
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+    }, 2000);
+  }
+
   return (
     <>
       <header className="header">
@@ -99,17 +114,41 @@ function Home() {
           className="form"
           action="https://formsubmit.co/relaxing987fhbsnd@gmail.com"
           method="POST"
+          target="_blank"
         >
-          <input type="text" name="name" placeholder="Name" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <input type="text" name="subject" placeholder="Subject" required />
+          <input
+            type="text"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Name"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            required
+          />
+          <input
+            type="text"
+            name="subject"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+            placeholder="Subject"
+            required
+          />
           <textarea
             name="message"
             rows={8}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             placeholder="Message"
             required
           ></textarea>
-          <button className="btn" type="submit">
+          <button className="btn" type="submit" onClick={ResetForm}>
             Submit
           </button>
         </form>

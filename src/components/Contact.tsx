@@ -1,4 +1,20 @@
+import { useState } from "react";
+
 function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  function ResetForm() {
+    setTimeout(() => {
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+    }, 2000);
+  }
+
   return (
     <section className="contact">
       <h2 className="heading">Contact Me</h2>
@@ -8,17 +24,41 @@ function Contact() {
         className="form"
         action="https://formsubmit.co/relaxing987fhbsnd@gmail.com"
         method="POST"
+        target="_blank"
       >
-        <input type="text" name="name" placeholder="Name" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <input type="text" name="subject" placeholder="Subject" required />
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Name"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          required
+        />
+        <input
+          type="text"
+          name="subject"
+          value={subject}
+          onChange={(e) => setSubject(e.target.value)}
+          placeholder="Subject"
+          required
+        />
         <textarea
           name="message"
           rows={8}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           placeholder="Message"
           required
         ></textarea>
-        <button className="btn" type="submit">
+        <button className="btn" type="submit" onClick={ResetForm}>
           Submit
         </button>
       </form>
