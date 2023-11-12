@@ -3,7 +3,7 @@ function Contact() {
     <section className="contact">
       <h2 className="heading">Contact Me</h2>
       <p className="sub-heading">Email me on relaxing987fhbsnd@gmail.com</p>
-      action="https://formsubmit.co/your@email.com" method="POST"
+
       <form
         className="form"
         action="https://formsubmit.co/relaxing987fhbsnd@gmail.com"
