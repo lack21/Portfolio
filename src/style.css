@@ -372,7 +372,7 @@ img {
 }
 .footer .icons {
   display: flex;
-  gap: 1.25rem;
+  gap: 1.325rem;
   align-items: center;
   padding-right: 1.75rem;
 }
@@ -425,6 +425,7 @@ img {
   }
   .footer .icons {
     padding-right: 0;
+    gap: 1rem;
   }
   .footer .icons .icon {
     width: 28px;

@@ -425,7 +425,7 @@ img {
 
   .icons {
     display: flex;
-    gap: 1.25rem;
+    gap: 1.325rem;
     align-items: center;
     padding-right: 1.75rem;
 
@@ -489,6 +489,7 @@ img {
 
     .icons {
       padding-right: 0;
+      gap: 1rem;
 
       .icon {
         width: 28px;

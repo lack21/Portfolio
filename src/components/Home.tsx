@@ -95,8 +95,12 @@ function Home() {
         <h2 className="heading">Contact Me</h2>
         <p className="sub-heading">Email me on relaxing987fhbsnd@gmail.com</p>
 
-        <form className="form">
-          <input type="text" name="text" placeholder="Name" required />
+        <form
+          className="form"
+          action="https://formsubmit.co/relaxing987fhbsnd@gmail.com"
+          method="POST"
+        >
+          <input type="text" name="name" placeholder="Name" required />
           <input type="email" name="email" placeholder="Email" required />
           <input type="text" name="subject" placeholder="Subject" required />
           <textarea
@@ -105,7 +109,9 @@ function Home() {
             placeholder="Message"
             required
           ></textarea>
-          <button className="btn">Submit</button>
+          <button className="btn" type="submit">
+            Submit
+          </button>
         </form>
       </section>
     </>
