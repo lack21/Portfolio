@@ -1,9 +1,30 @@
 import { Outlet, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import githubImage from "../assets/Github.png";
 import linkedinImage from "../assets/Linkedin.png";
 import youtubeImage from "../assets/Youtube.png";
 
 function Layout() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isExpand, setIsExpand] = useState(false);
+
+  const updateCursorPosition = (e: any) => {
+    setPosition({ x: e.pageX, y: e.pageY });
+  };
+
+  function ToggleExpand() {
+    setIsExpand(true);
+    setTimeout(() => setIsExpand(false), 500);
+  }
+
+  useEffect(() => {
+    document.addEventListener("mousemove", updateCursorPosition);
+
+    return () => {
+      document.removeEventListener("mousemove", updateCursorPosition);
+    };
+  }, []);
+
   return (
     <>
       <nav className="nav-bar">
@@ -41,6 +62,12 @@ function Layout() {
           </a>
         </div>
       </footer>
+      <div
+        className={`cursor ${isExpand ? "expand" : ""}`}
+        onMouseMove={updateCursorPosition}
+        onClick={ToggleExpand}
+        style={{ left: `${position.x - 15}px`, top: `${position.y - 15}px` }}
+      ></div>
     </>
   );
 }
