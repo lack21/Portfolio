@@ -499,6 +499,14 @@ img {
     grid-template-columns: 1fr;
     gap: 2.25rem;
   }
+
+  * {
+    cursor: auto;
+  }
+
+  .cursor {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 624px) {
