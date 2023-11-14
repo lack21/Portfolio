@@ -223,82 +223,24 @@ img {
   -webkit-animation: fade 2s ease forwards;
 
   .row {
-    width: min(1100px, 90vw);
-    margin: 10rem auto;
     display: grid;
     grid-gap: 2.75rem;
     grid-template-columns: repeat(2, 1fr);
+    width: min(1100px, 90vw);
+    margin: 5rem 0;
 
     .item {
-      height: 300px;
-      width: 100%;
-      background-size: cover;
       position: relative;
-      border-radius: 0.25rem;
-      -webkit-border-radius: 0.25rem;
-      -moz-border-radius: 0.25rem;
-      -ms-border-radius: 0.25rem;
-      -o-border-radius: 0.25rem;
-      background-image: url(assets/Audiophile.png);
 
-      &:nth-child(2) {
-        background-image: url(assets/Ip_Adress_Tracker.png);
-      }
-
-      &:nth-child(3) {
-        background-image: url(assets/Art_Gallery.png);
-      }
-
-      &:nth-child(4) {
-        background-image: url(assets/Manage.png);
-      }
-
-      &:nth-child(5) {
-        background-image: url(assets/Movies.png);
-      }
-
-      &:nth-child(6) {
-        background-image: url(assets/Myteam.png);
-      }
-
-      &:nth-child(7) {
-        background-image: url(assets/Url_Shortening_Api.png);
-      }
-
-      &:nth-child(8) {
-        background-image: url(assets/Coffeeroasters.png);
-      }
-
-      &:nth-child(9) {
-        background-image: url(assets/Dine.png);
-      }
-
-      &:nth-child(10) {
-        background-image: url(assets/Designo.png);
-      }
-
-      &:nth-child(11) {
-        background-image: url(assets/Tourism.png);
-      }
-
-      &:nth-child(12) {
-        background-image: url(assets/Photosnap.png);
-      }
-
-      &:nth-child(13) {
-        background-image: url(assets/Room.png);
-      }
-
-      &:nth-child(14) {
-        background-image: url(assets/PayAPI.png);
-      }
-
-      &:nth-child(15) {
-        background-image: url(assets/Planets.png);
-      }
-
-      &:nth-child(16) {
-        background-image: url(assets/Bookmark.png);
+      .project-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.25rem;
+        -webkit-border-radius: 0.25rem;
+        -moz-border-radius: 0.25rem;
+        -ms-border-radius: 0.25rem;
+        -o-border-radius: 0.25rem;
       }
 
       &:hover .layer {
@@ -342,6 +284,54 @@ img {
           &:hover {
             scale: 0.9;
             opacity: 0.75;
+          }
+        }
+      }
+    }
+  }
+
+  .switcher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 7.5rem;
+    gap: 1.25rem;
+
+    .btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border: none;
+      font-size: 1rem;
+      color: $white;
+      background-color: $navButton;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &.arrow-btn {
+        display: grid;
+        place-content: center;
+        width: 48px;
+        height: 48px;
+
+        img {
+          width: 24px;
+          filter: brightness(0) invert(1);
+          -webkit-filter: brightness(0) invert(1);
+
+          &.right {
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
           }
         }
       }
@@ -452,10 +442,7 @@ img {
 @media screen and (max-width: 968px) {
   .projects .row {
     grid-template-columns: 1fr;
-
-    .item {
-      height: 45vw;
-    }
+    gap: 2.25rem;
   }
 }
 
@@ -540,5 +527,22 @@ img {
 
   .projects .row .item .layer img {
     width: 28px;
+  }
+
+  .projects .switcher {
+    .btn {
+      width: 36px;
+      height: 36px;
+      font-size: 0.925rem;
+
+      &.arrow-btn {
+        width: 44px;
+        height: 44px;
+
+        img {
+          width: 22px;
+        }
+      }
+    }
   }
 }

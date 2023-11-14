@@ -9,6 +9,8 @@ import tailwindImage from "../assets/Tailwind.png";
 import nodejsImage from "../assets/NodeJS.png";
 import gitImage from "../assets/git.png";
 import pythonImage from "../assets/Python.png";
+import npmImage from "../assets/Npm.png";
+import viteImage from "../assets/Vite.svg";
 import georgianFlagImage from "../assets/Georgian_Flag.png";
 import englishFlagImage from "../assets/English_Flag.png";
 import russianFlagImage from "../assets/Russian_Flag.png";
@@ -83,6 +85,14 @@ function Home() {
           <div className="skill">
             <img src={tailwindImage} alt="Tailwind" />
             <h3 className="name">Tailwind</h3>
+          </div>
+          <div className="skill">
+            <img src={npmImage} alt="Npm" />
+            <h3 className="name">Npm</h3>
+          </div>
+          <div className="skill">
+            <img src={viteImage} alt="Vite" />
+            <h3 className="name">Vite</h3>
           </div>
         </div>
       </section>

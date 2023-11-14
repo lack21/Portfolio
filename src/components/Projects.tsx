@@ -1,300 +1,74 @@
 import githubImage from "../assets/Github.png";
 import eyeImage from "../assets/Eye.png";
+import arrowImage from "../assets/Arrow.png";
+import { projectsArray } from "./ProjectImages";
+import { useState } from "react";
 
 function Projects() {
+  const [pageNumber, setPageNumber] = useState(0);
+
+  function FirstPage() {
+    setPageNumber(0);
+  }
+
+  function SecondPage() {
+    setPageNumber(1);
+  }
+
+  function ThirdPage() {
+    setPageNumber(2);
+  }
+
+  function PreviousPage() {
+    if (pageNumber === 0) {
+      return;
+    }
+    setPageNumber((pageNumber) => (pageNumber -= 1));
+  }
+
+  function NextPage() {
+    if (pageNumber === 2) {
+      return;
+    }
+    setPageNumber((pageNumber) => (pageNumber += 1));
+  }
+
   return (
     <section className="projects">
       <h2 className="heading">My Projects</h2>
 
       <div className="row">
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/Audiophile/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/Audiophile"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
+        {projectsArray[pageNumber].map((item, index) => (
+          <div className="item" key={index}>
+            <img src={item[0]} className="project-img" alt="project" />
+            <div className="layer">
+              <a href={item[1]} className="link" target="_blank">
+                <img src={eyeImage} alt="eye-icon" />
+              </a>
+              <a href={item[2]} className="link" target="_blank">
+                <img src={githubImage} alt="github-icon" />
+              </a>
+            </div>
           </div>
-        </div>
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/IP-Address-Tracker/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/IP-Address-Tracker"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
-          </div>
-        </div>
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/Art-Gallery-Website/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/Art-Gallery-Website"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
-          </div>
-        </div>
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/Manage-Website/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/Manage-Website"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
-          </div>
-        </div>
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/Movies/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/Movies"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
-          </div>
-        </div>
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/Myteam/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/Myteam"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
-          </div>
-        </div>
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/URL-Shortening-API/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/URL-Shortening-API"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
-          </div>
-        </div>
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/Coffeeroasters/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/Coffeeroasters"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
-          </div>
-        </div>
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/Dine/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/Dine"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
-          </div>
-        </div>
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/Designo/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/Designo"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
-          </div>
-        </div>
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/Tourism/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/Tourism"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
-          </div>
-        </div>
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/Photosnap/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/Photosnap"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
-          </div>
-        </div>
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/Room/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/Room"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
-          </div>
-        </div>
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/PayAPI-Website/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/PayAPI-Website"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
-          </div>
-        </div>
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/Planets/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/Planets"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
-          </div>
-        </div>
-        <div className="item">
-          <div className="layer">
-            <a
-              href="https://lack21.github.io/Bookmark/"
-              className="link"
-              target="_blank"
-            >
-              <img src={eyeImage} alt="eye image" />
-            </a>
-            <a
-              href="https://github.com/lack21/Bookmark"
-              className="link"
-              target="_blank"
-            >
-              <img src={githubImage} alt="github image" />
-            </a>
-          </div>
-        </div>
+        ))}
+      </div>
+
+      <div className="switcher">
+        <button className="btn arrow-btn" onClick={PreviousPage}>
+          <img src={arrowImage} alt="arrow-icon" />
+        </button>
+        <button className="btn" onClick={FirstPage}>
+          1
+        </button>
+        <button className="btn" onClick={SecondPage}>
+          2
+        </button>
+        <button className="btn" onClick={ThirdPage}>
+          3
+        </button>
+        <button className="btn arrow-btn" onClick={NextPage}>
+          <img src={arrowImage} className="right" alt="arrow-icon" />
+        </button>
       </div>
     </section>
   );
