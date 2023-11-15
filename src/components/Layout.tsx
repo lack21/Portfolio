@@ -12,16 +12,18 @@ function Layout() {
     setPosition({ x: e.pageX, y: e.pageY });
   };
 
-  function ToggleExpand() {
+  const toggleExpand = () => {
     setIsExpand(true);
     setTimeout(() => setIsExpand(false), 500);
-  }
+  };
 
   useEffect(() => {
     document.addEventListener("mousemove", updateCursorPosition);
+    document.addEventListener("click", toggleExpand);
 
     return () => {
       document.removeEventListener("mousemove", updateCursorPosition);
+      document.addEventListener("click", toggleExpand);
     };
   }, []);
 
@@ -65,7 +67,7 @@ function Layout() {
       <div
         className={`cursor ${isExpand ? "expand" : ""}`}
         onMouseMove={updateCursorPosition}
-        onClick={ToggleExpand}
+        onClick={toggleExpand}
         style={{ left: `${position.x - 15}px`, top: `${position.y - 15}px` }}
       ></div>
     </>
