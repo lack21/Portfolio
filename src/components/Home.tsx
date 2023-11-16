@@ -15,13 +15,11 @@ import threejsImage from "../assets/Threejs.svg";
 import georgianFlagImage from "../assets/Georgian_Flag.png";
 import englishFlagImage from "../assets/English_Flag.png";
 import russianFlagImage from "../assets/Russian_Flag.png";
-import { useState } from "react";
+import useIntersectionObserver from "./Observer";
+import Contact from "./Contact";
 
 function Home() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
+  const {} = useIntersectionObserver();
 
   const skillsArray = [
     ["React", reactImage],
@@ -46,23 +44,14 @@ function Home() {
     ["Georgian", georgianFlagImage],
   ];
 
-  function ResetForm() {
-    setTimeout(() => {
-      setName("");
-      setEmail("");
-      setSubject("");
-      setMessage("");
-    }, 2000);
-  }
-
   return (
     <>
-      <header className="header">
+      <header className="header hidden">
         <h1 className="title">Hi, I'm Luka!</h1>
         <p className="sub-title">Front-End Developer</p>
       </header>
 
-      <section className="skills">
+      <section className="skills hidden">
         <h2 className="heading">Skills</h2>
 
         <div className="row">
@@ -75,7 +64,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="languages">
+      <section className="languages hidden">
         <h2 className="heading">Languages</h2>
 
         <div className="row">
@@ -88,53 +77,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="contact first">
-        <h2 className="heading">Contact Me</h2>
-        <p className="sub-heading">Email me on relaxing987fhbsnd@gmail.com</p>
-
-        <form
-          className="form"
-          action="https://formsubmit.co/relaxing987fhbsnd@gmail.com"
-          method="POST"
-          target="_blank"
-        >
-          <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Name"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            required
-          />
-          <input
-            type="text"
-            name="subject"
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-            placeholder="Subject"
-            required
-          />
-          <textarea
-            name="message"
-            rows={8}
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="Message"
-            required
-          ></textarea>
-          <button className="btn" type="submit" onClick={ResetForm}>
-            Submit
-          </button>
-        </form>
-      </section>
+      <Contact />
     </>
   );
 }

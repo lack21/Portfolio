@@ -3,9 +3,11 @@ import eyeImage from "../assets/Eye.png";
 import arrowImage from "../assets/Arrow.png";
 import { projectsArray } from "./ProjectImages";
 import { useState } from "react";
+import useIntersectionObserver from "./Observer";
 
 function Projects() {
   const [pageNumber, setPageNumber] = useState(0);
+  const {} = useIntersectionObserver();
 
   function FirstPage() {
     setPageNumber(0);
@@ -35,11 +37,11 @@ function Projects() {
 
   return (
     <section className="projects">
-      <h2 className="heading">My Projects</h2>
+      <h2 className="heading hidden">My Projects</h2>
 
       <div className="row">
         {projectsArray[pageNumber].map((item, index) => (
-          <div className="item" key={index}>
+          <div className="item hidden" key={index}>
             <img
               src={item[0]}
               className="project-img"
@@ -58,7 +60,7 @@ function Projects() {
         ))}
       </div>
 
-      <div className="switcher">
+      <div className="switcher hidden">
         <button className="btn arrow-btn" onClick={PreviousPage}>
           <img src={arrowImage} alt="arrow-icon" />
         </button>

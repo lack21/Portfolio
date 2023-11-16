@@ -1,10 +1,12 @@
 import { useState } from "react";
+import useIntersectionObserver from "./Observer";
 
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const {} = useIntersectionObserver();
 
   function ResetForm() {
     setTimeout(() => {
@@ -17,8 +19,10 @@ function Contact() {
 
   return (
     <section className="contact">
-      <h2 className="heading">Contact Me</h2>
-      <p className="sub-heading">Email me on relaxing987fhbsnd@gmail.com</p>
+      <h2 className="heading hidden">Contact Me</h2>
+      <p className="sub-heading hidden">
+        Email me on relaxing987fhbsnd@gmail.com
+      </p>
 
       <form
         className="form"
@@ -33,6 +37,7 @@ function Contact() {
           onChange={(e) => setName(e.target.value)}
           placeholder="Name"
           required
+          className="hidden"
         />
         <input
           type="email"
@@ -41,6 +46,7 @@ function Contact() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
           required
+          className="hidden"
         />
         <input
           type="text"
@@ -49,6 +55,7 @@ function Contact() {
           onChange={(e) => setSubject(e.target.value)}
           placeholder="Subject"
           required
+          className="hidden"
         />
         <textarea
           name="message"
@@ -57,8 +64,9 @@ function Contact() {
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Message"
           required
+          className="hidden"
         ></textarea>
-        <button className="btn" type="submit" onClick={ResetForm}>
+        <button className="btn hidden" type="submit" onClick={ResetForm}>
           Submit
         </button>
       </form>

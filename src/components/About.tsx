@@ -1,6 +1,10 @@
+import useIntersectionObserver from "./Observer";
+
 function About() {
+  const {} = useIntersectionObserver();
+
   return (
-    <section className="about">
+    <section className="about hidden">
       <h2 className="heading">About Me</h2>
 
       <p className="text">

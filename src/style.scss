@@ -68,6 +68,29 @@ img {
   }
 }
 
+.hidden {
+  opacity: 0 !important;
+  transition: 1.5s;
+  -webkit-transition: 1.5s;
+  -moz-transition: 1.5s;
+  -ms-transition: 1.5s;
+  -o-transition: 1.5s;
+  transform: translateX(-150px);
+  -webkit-transform: translateX(-150px);
+  -moz-transform: translateX(-150px);
+  -ms-transform: translateX(-150px);
+  -o-transform: translateX(-150px);
+}
+
+.show {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  opacity: 1 !important;
+}
+
 // Animation
 @keyframes changer {
   50% {
@@ -103,26 +126,6 @@ img {
     -ms-transform: scale(1);
     -o-transform: scale(1);
     opacity: 1;
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(5rem);
-    -webkit-transform: translateY(5rem);
-    -moz-transform: translateY(5rem);
-    -ms-transform: translateY(5rem);
-    -o-transform: translateY(5rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
   }
 }
 
@@ -182,16 +185,12 @@ img {
     font-size: 4.725rem;
     color: $white;
     opacity: 0.9;
-    animation: fade 2s ease forwards;
-    -webkit-animation: fade 2s ease forwards;
   }
 
   .sub-title {
     font-size: 1.725rem;
     color: $white;
     opacity: 0.9;
-    animation: fade 2s ease forwards;
-    -webkit-animation: fade 2s ease forwards;
   }
 }
 
@@ -256,8 +255,6 @@ img {
   padding: 15rem 0 10rem;
   display: grid;
   place-content: center;
-  animation: fade 2s ease forwards;
-  -webkit-animation: fade 2s ease forwards;
 
   .text {
     width: min(700px, 90vw);
@@ -279,8 +276,6 @@ img {
   display: grid;
   place-content: center;
   padding-top: 15rem;
-  animation: fade 2s ease forwards;
-  -webkit-animation: fade 2s ease forwards;
 
   .row {
     display: grid;
@@ -403,8 +398,6 @@ img {
   padding: 15rem 0 10rem;
   display: grid;
   place-content: center;
-  animation: fade 2s ease forwards;
-  -webkit-animation: fade 2s ease forwards;
 
   &.first {
     padding-top: 7.5rem;
