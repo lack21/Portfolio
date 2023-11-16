@@ -14,12 +14,11 @@ $black: #000;
 $white: #fff;
 $topBackground: linear-gradient(to bottom, rgb(50, 25, 125), transparent);
 $navBackground: rgba(150, 30, 140, 0.25);
-$navButton: rgba(150, 30, 140, 0.5);
+$navButton: rgba(150, 25, 150, 0.5);
 $halfGray: rgba(120, 120, 120, 0.25);
 $midGray: rgba(120, 120, 120, 0.5);
 $lightPink: rgb(150, 100, 250);
-$halfBlue: rgba(100, 0, 150, 0.75);
-$cursor: rgb(150, 0, 175);
+$halfBlue: rgba(100, 0, 175, 0.75);
 
 // Global Styles
 body {
@@ -56,10 +55,12 @@ img {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  outline: 2.2px solid $cursor;
+  outline: 2.2px solid $white;
   animation: changer 1s ease infinite;
   -webkit-animation: changer 1s ease infinite;
   pointer-events: none;
+  z-index: 3;
+  box-shadow: 0 0 0.5rem $white;
 
   &.expand {
     animation: expand 1s ease forwards;
@@ -67,6 +68,7 @@ img {
   }
 }
 
+// Animation
 @keyframes changer {
   50% {
     transform: scale(0.75);
@@ -104,7 +106,6 @@ img {
   }
 }
 
-// Animation
 @keyframes fade {
   from {
     opacity: 0;
@@ -143,6 +144,7 @@ img {
   -o-border-radius: 2rem;
   background: $navBackground;
   z-index: 2;
+  backdrop-filter: blur(0.25rem);
 
   .link {
     text-decoration: none;
@@ -340,8 +342,8 @@ img {
           -o-transition: 0.5s;
 
           &:hover {
-            scale: 0.9;
-            opacity: 0.75;
+            scale: 0.85;
+            opacity: 0.7;
           }
         }
       }
@@ -369,7 +371,7 @@ img {
       background-color: $navButton;
 
       &:hover {
-        opacity: 0.8;
+        opacity: 0.7;
       }
 
       &.arrow-btn {
@@ -486,8 +488,8 @@ img {
       -o-transition: 0.5s;
 
       &:hover {
-        scale: 0.9;
-        opacity: 0.75;
+        scale: 0.85;
+        opacity: 0.7;
       }
     }
   }

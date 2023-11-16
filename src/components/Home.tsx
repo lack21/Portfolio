@@ -11,6 +11,7 @@ import gitImage from "../assets/git.png";
 import pythonImage from "../assets/Python.png";
 import npmImage from "../assets/Npm.png";
 import viteImage from "../assets/Vite.svg";
+import threejsImage from "../assets/Threejs.svg";
 import georgianFlagImage from "../assets/Georgian_Flag.png";
 import englishFlagImage from "../assets/English_Flag.png";
 import russianFlagImage from "../assets/Russian_Flag.png";
@@ -21,6 +22,29 @@ function Home() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+
+  const skillsArray = [
+    ["React", reactImage],
+    ["Typescript", tsImage],
+    ["Javascript", jsImage],
+    ["NodeJs", nodejsImage],
+    ["HTML", htmlImage],
+    ["CSS", cssImage],
+    ["Sass", sassImage],
+    ["Python", pythonImage],
+    ["GIT", gitImage],
+    ["API", apiImage],
+    ["Tailwind", tailwindImage],
+    ["Npm", npmImage],
+    ["Vite", viteImage],
+    ["Threejs", threejsImage],
+  ];
+
+  const languagesArray = [
+    ["English", englishFlagImage],
+    ["Russian", russianFlagImage],
+    ["Georgian", georgianFlagImage],
+  ];
 
   function ResetForm() {
     setTimeout(() => {
@@ -42,58 +66,12 @@ function Home() {
         <h2 className="heading">Skills</h2>
 
         <div className="row">
-          <div className="skill">
-            <img src={reactImage} alt="React" />
-            <h3 className="name">React</h3>
-          </div>
-          <div className="skill">
-            <img src={tsImage} alt="Typescript" />
-            <h3 className="name">TypeScript</h3>
-          </div>
-          <div className="skill">
-            <img src={jsImage} alt="Javascript" />
-            <h3 className="name">JavaScript</h3>
-          </div>
-          <div className="skill">
-            <img src={nodejsImage} alt="Nodejs" />
-            <h3 className="name">NodeJS</h3>
-          </div>
-          <div className="skill">
-            <img src={htmlImage} alt="Html" />
-            <h3 className="name">HTML</h3>
-          </div>
-          <div className="skill">
-            <img src={cssImage} alt="Css" />
-            <h3 className="name">CSS</h3>
-          </div>
-          <div className="skill">
-            <img src={sassImage} alt="Scss" />
-            <h3 className="name">Scss</h3>
-          </div>
-          <div className="skill">
-            <img src={pythonImage} alt="Python" />
-            <h3 className="name">Python</h3>
-          </div>
-          <div className="skill">
-            <img src={gitImage} alt="Git" />
-            <h3 className="name">GIT</h3>
-          </div>
-          <div className="skill">
-            <img src={apiImage} alt="Api" />
-            <h3 className="name">API</h3>
-          </div>
-          <div className="skill">
-            <img src={tailwindImage} alt="Tailwind" />
-            <h3 className="name">Tailwind</h3>
-          </div>
-          <div className="skill">
-            <img src={npmImage} alt="Npm" />
-            <h3 className="name">Npm</h3>
-          </div>
-          <div className="skill">
-            <img src={viteImage} alt="Vite" />
-            <h3 className="name">Vite</h3>
-          </div>
+          {skillsArray.map((item, index) => (
+            <div className="skill" key={index}>
+              <img src={item[1]} alt="skill-icon" />
+              <h3 className="name">{item[0]}</h3>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -101,18 +79,12 @@ function Home() {
         <h2 className="heading">Languages</h2>
 
         <div className="row">
-          <div className="language">
-            <img src={georgianFlagImage} alt="georgia" />
-            <h3 className="name">Georgian</h3>
-          </div>
-          <div className="language">
-            <img src={englishFlagImage} alt="england" />
-            <h3 className="name">English</h3>
-          </div>
-          <div className="language">
-            <img src={russianFlagImage} alt="russia" />
-            <h3 className="name">Russian</h3>
-          </div>
+          {languagesArray.map((item, index) => (
+            <div className="language" key={index}>
+              <img src={item[1]} alt="language" />
+              <h3 className="name">{item[0]}</h3>
+            </div>
+          ))}
         </div>
       </section>
 

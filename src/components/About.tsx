@@ -6,7 +6,7 @@ function About() {
       <p className="text">
         Hey there, I'm Lucas, and I'm absolutely thrilled to talk about my
         journey as a front-end developer. Over the years, I've had the privilege
-        of working on more than <span>100 Projects</span>, and I can't express
+        of working on more than <span>200 Projects</span>, and I can't express
         how much I love what I do.
       </p>
       <p className="text">

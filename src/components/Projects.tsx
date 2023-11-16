@@ -40,7 +40,12 @@ function Projects() {
       <div className="row">
         {projectsArray[pageNumber].map((item, index) => (
           <div className="item" key={index}>
-            <img src={item[0]} className="project-img" alt="project" />
+            <img
+              src={item[0]}
+              className="project-img"
+              alt="project"
+              loading="lazy"
+            />
             <div className="layer">
               <a href={item[1]} className="link" target="_blank">
                 <img src={eyeImage} alt="eye-icon" />
