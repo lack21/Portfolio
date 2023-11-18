@@ -21,6 +21,7 @@ import blorgImage from "../assets/Blorg.png";
 import countriesApiImage from "../assets/Countries_API.png";
 import fyloImage from "../assets/Fylo.png";
 import insureImage from "../assets/Insure.png";
+import archImage from "../assets/Arch.png";
 
 export const projectsArray = [
   [
@@ -40,9 +41,9 @@ export const projectsArray = [
       "https://github.com/lack21/Art-Gallery-Website",
     ],
     [
-      manageImage,
-      "https://lack21.github.io/Manage-Website/",
-      "https://github.com/lack21/Manage-Website",
+      archImage,
+      "https://lack21.github.io/Arch/",
+      "https://github.com/lack21/Arch",
     ],
     [
       moviesImage,
@@ -142,6 +143,11 @@ export const projectsArray = [
       insureImage,
       "https://lack21.github.io/Insure/",
       "https://github.com/lack21/Insure",
+    ],
+    [
+      manageImage,
+      "https://lack21.github.io/Manage-Website/",
+      "https://github.com/lack21/Manage-Website",
     ],
   ],
 ];
