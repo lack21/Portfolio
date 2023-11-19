@@ -21,6 +21,10 @@ function Projects() {
     setPageNumber(2);
   }
 
+  function FourthPage() {
+    setPageNumber(3);
+  }
+
   function PreviousPage() {
     if (pageNumber === 0) {
       return;
@@ -29,7 +33,7 @@ function Projects() {
   }
 
   function NextPage() {
-    if (pageNumber === 2) {
+    if (pageNumber === 3) {
       return;
     }
     setPageNumber((pageNumber) => (pageNumber += 1));
@@ -72,6 +76,9 @@ function Projects() {
         </button>
         <button className="btn" onClick={ThirdPage}>
           3
+        </button>
+        <button className="btn" onClick={FourthPage}>
+          4
         </button>
         <button className="btn arrow-btn" onClick={NextPage}>
           <img src={arrowImage} className="right" alt="arrow-icon" />

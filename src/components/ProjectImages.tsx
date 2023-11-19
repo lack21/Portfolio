@@ -22,6 +22,8 @@ import countriesApiImage from "../assets/Countries_API.png";
 import fyloImage from "../assets/Fylo.png";
 import insureImage from "../assets/Insure.png";
 import archImage from "../assets/Arch.png";
+import sneakersImage from "../assets/Sneakers.png";
+import dashboardImage from "../assets/Dashboard.png";
 
 export const projectsArray = [
   [
@@ -148,6 +150,18 @@ export const projectsArray = [
       manageImage,
       "https://lack21.github.io/Manage-Website/",
       "https://github.com/lack21/Manage-Website",
+    ],
+  ],
+  [
+    [
+      sneakersImage,
+      "https://lack21.github.io/Sneakers/",
+      "https://github.com/lack21/Sneakers",
+    ],
+    [
+      dashboardImage,
+      "https://lack21.github.io/Time-Tracking-Dashboard/",
+      "https://github.com/lack21/Time-Tracking-Dashboard",
     ],
   ],
 ];

@@ -11,7 +11,7 @@ const useIntersectionObserver = () => {
         }
       });
     },
-    { rootMargin: "-50px" }
+    { rootMargin: "-25px" }
   );
 
   useEffect(() => {

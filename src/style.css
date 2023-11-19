@@ -524,6 +524,9 @@ img {
   .projects .row .item .layer img {
     width: 28px;
   }
+  .projects .switcher {
+    gap: 1rem;
+  }
   .projects .switcher .btn {
     width: 36px;
     height: 36px;
