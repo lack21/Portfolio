@@ -12,13 +12,16 @@
 // Colors
 $black: #000;
 $white: #fff;
-$topBackground: linear-gradient(to bottom, rgb(50, 25, 125), transparent);
 $navBackground: rgba(150, 30, 140, 0.25);
 $navButton: rgba(150, 25, 150, 0.5);
 $halfGray: rgba(120, 120, 120, 0.25);
 $midGray: rgba(120, 120, 120, 0.5);
 $lightPink: rgb(150, 100, 250);
 $halfBlue: rgba(100, 0, 175, 0.75);
+
+$purpleBackground: linear-gradient(to bottom, rgb(50, 25, 175), transparent);
+$redBackground: linear-gradient(to bottom, rgb(150, 25, 50), transparent);
+$cyanBackground: linear-gradient(to bottom, rgb(25, 150, 175), transparent);
 
 // Global Styles
 body {
@@ -29,9 +32,21 @@ body {
     content: "";
     width: 100%;
     height: 75vh;
-    background: $topBackground;
+    background: $purpleBackground;
     position: absolute;
     pointer-events: none;
+  }
+
+  &.purple-theme::before {
+    background: $purpleBackground;
+  }
+
+  &.red-theme::before {
+    background: $redBackground;
+  }
+
+  &.cyan-theme::before {
+    background: $cyanBackground;
   }
 }
 
@@ -89,6 +104,76 @@ img {
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   opacity: 1 !important;
+}
+
+.theme-btn {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  right: 0.5rem;
+  bottom: 1.5rem;
+  border: none;
+  display: grid;
+  place-content: center;
+  background-color: $midGray;
+  z-index: 2;
+  isolation: isolate;
+
+  img {
+    width: 28px;
+    filter: brightness(0) invert(1);
+    -webkit-filter: brightness(0) invert(1);
+  }
+
+  .container {
+    top: calc(-120px - 3rem);
+    left: calc(50% - 24px);
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: $halfGray;
+    border-radius: 3rem;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    padding: 4px 4px 3.8rem 4px;
+
+    &.active {
+      display: flex;
+    }
+
+    div {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+
+      &.purple-theme {
+        background: $purpleBackground;
+      }
+
+      &.red-theme {
+        background: $redBackground;
+      }
+
+      &.cyan-theme {
+        background: $cyanBackground;
+      }
+    }
+  }
 }
 
 // Animation
@@ -604,5 +689,9 @@ img {
         }
       }
     }
+  }
+
+  .theme-btn {
+    right: calc(50vw - 24px);
   }
 }

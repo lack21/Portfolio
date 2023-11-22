@@ -1,12 +1,14 @@
 import { Outlet, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import githubImage from "../assets/Github.png";
-import linkedinImage from "../assets/Linkedin.png";
-import youtubeImage from "../assets/Youtube.png";
+import githubImage from "../assets/icons/Github.png";
+import linkedinImage from "../assets/icons/Linkedin.png";
+import youtubeImage from "../assets/icons/Youtube.png";
+import themeImage from "../assets/icons/Theme.png";
 
 function Layout() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isExpand, setIsExpand] = useState(false);
+  const [isTheme, setIsTheme] = useState(false);
 
   const updateCursorPosition = (e: any) => {
     setPosition({ x: e.pageX, y: e.pageY });
@@ -26,6 +28,10 @@ function Layout() {
       document.addEventListener("click", toggleExpand);
     };
   }, []);
+
+  function setTheme(e: any) {
+    document.body.className = e.target.className;
+  }
 
   return (
     <>
@@ -70,6 +76,14 @@ function Layout() {
         onClick={toggleExpand}
         style={{ left: `${position.x - 15}px`, top: `${position.y - 15}px` }}
       ></div>
+      <button className="theme-btn" onClick={() => setIsTheme(!isTheme)}>
+        <img src={themeImage} alt="theme-icon" />
+        <div className={`container ${isTheme ? "active" : ""}`}>
+          <div className="purple-theme" onClick={setTheme}></div>
+          <div className="red-theme" onClick={setTheme}></div>
+          <div className="cyan-theme" onClick={setTheme}></div>
+        </div>
+      </button>
     </>
   );
 }
