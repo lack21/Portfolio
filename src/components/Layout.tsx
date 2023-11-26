@@ -7,16 +7,10 @@ import themeImage from "../assets/icons/Theme.png";
 
 function Layout() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isExpand, setIsExpand] = useState(false);
   const [isTheme, setIsTheme] = useState(false);
 
   const updateCursorPosition = (e: any) => {
     setPosition({ x: e.pageX, y: e.pageY });
-  };
-
-  const toggleExpand = () => {
-    setIsExpand(true);
-    setTimeout(() => setIsExpand(false), 500);
   };
 
   useEffect(() => {
