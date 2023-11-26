@@ -12,16 +12,16 @@
 // Colors
 $black: #000;
 $white: #fff;
-$navBackground: rgba(150, 30, 140, 0.25);
+$navBackground: rgba(150, 25, 150, 0.25);
 $navButton: rgba(150, 25, 150, 0.5);
 $halfGray: rgba(120, 120, 120, 0.25);
 $midGray: rgba(120, 120, 120, 0.5);
 $lightPink: rgb(150, 100, 250);
 $halfBlue: rgba(100, 0, 175, 0.75);
 
-$purpleBackground: linear-gradient(to bottom, rgb(50, 25, 175), transparent);
-$redBackground: linear-gradient(to bottom, rgb(150, 25, 50), transparent);
-$cyanBackground: linear-gradient(to bottom, rgb(25, 150, 175), transparent);
+$purpleBackground: linear-gradient(to bottom, rgb(25, 25, 150), transparent);
+$redBackground: linear-gradient(to bottom, rgb(150, 25, 25), transparent);
+$cyanBackground: linear-gradient(to bottom, rgb(50, 150, 200), transparent);
 
 // Global Styles
 body {
@@ -63,24 +63,17 @@ img {
 
 .cursor {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 12px;
+  height: 12px;
+  background-color: $white;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  outline: 2.2px solid $white;
-  animation: changer 1s ease infinite;
-  -webkit-animation: changer 1s ease infinite;
   pointer-events: none;
   z-index: 3;
-  box-shadow: 0 0 0.5rem $white;
-
-  &.expand {
-    animation: expand 1s ease forwards;
-    -webkit-animation: expand 1s ease forwards;
-  }
+  box-shadow: 0 0 0.6rem $white;
 }
 
 .hidden {
@@ -173,44 +166,6 @@ img {
         background: $cyanBackground;
       }
     }
-  }
-}
-
-// Animation
-@keyframes changer {
-  50% {
-    transform: scale(0.75);
-    -webkit-transform: scale(0.75);
-    -moz-transform: scale(0.75);
-    -ms-transform: scale(0.75);
-    -o-transform: scale(0.75);
-  }
-  100% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-  }
-}
-
-@keyframes expand {
-  33% {
-    transform: scale(2);
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    -ms-transform: scale(2);
-    -o-transform: scale(2);
-    opacity: 0;
-  }
-
-  66% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    opacity: 1;
   }
 }
 

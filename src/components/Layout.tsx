@@ -21,11 +21,9 @@ function Layout() {
 
   useEffect(() => {
     document.addEventListener("mousemove", updateCursorPosition);
-    document.addEventListener("click", toggleExpand);
 
     return () => {
       document.removeEventListener("mousemove", updateCursorPosition);
-      document.addEventListener("click", toggleExpand);
     };
   }, []);
 
@@ -71,10 +69,9 @@ function Layout() {
         </div>
       </footer>
       <div
-        className={`cursor ${isExpand ? "expand" : ""}`}
+        className="cursor"
         onMouseMove={updateCursorPosition}
-        onClick={toggleExpand}
-        style={{ left: `${position.x - 15}px`, top: `${position.y - 15}px` }}
+        style={{ left: `${position.x - 6}px`, top: `${position.y - 6}px` }}
       ></div>
       <button className="theme-btn" onClick={() => setIsTheme(!isTheme)}>
         <img src={themeImage} alt="theme-icon" />
