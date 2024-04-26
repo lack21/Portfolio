@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useIntersectionObserver from "./Observer";
 
-function Contact() {
+function Contact({ currentLanguage }: { currentLanguage: string }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -19,9 +19,12 @@ function Contact() {
 
   return (
     <section className="contact">
-      <h2 className="heading hidden">Contact Me</h2>
+      <h2 className="heading hidden">
+        {currentLanguage == "eng" ? "Contact Me" : "დამიკავშირდი"}
+      </h2>
       <p className="sub-heading hidden">
-        Email me on relaxing987fhbsnd@gmail.com
+        {currentLanguage == "eng" ? "Email me on" : "დამიკავშირდი"}
+        relaxing987fhbsnd@gmail.com
       </p>
 
       <form
@@ -67,7 +70,7 @@ function Contact() {
           className="hidden"
         ></textarea>
         <button className="btn hidden" type="submit" onClick={ResetForm}>
-          Submit
+          {currentLanguage == "eng" ? "Submit" : "დადასტურება"}
         </button>
       </form>
     </section>

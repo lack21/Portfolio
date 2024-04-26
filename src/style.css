@@ -32,6 +32,22 @@ img {
   display: block;
 }
 
+.lang-btn {
+  position: fixed;
+  top: calc(50% - 30px);
+  left: 0.5rem;
+  background-color: transparent;
+  border: none;
+}
+.lang-btn img {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  filter: brightness(0) saturate(0) invert(1);
+  -webkit-filter: brightness(0) saturate(0) invert(1);
+}
+
 .heading {
   font-size: 4rem;
   color: #fff;
@@ -498,11 +514,11 @@ img {
     gap: 0;
   }
   .nav-bar .link {
-    font-size: 0.925rem;
+    font-size: 0.9rem;
     padding: 0.6rem 0;
   }
   .heading {
-    font-size: 3rem;
+    font-size: 2.85rem;
   }
   .footer .text {
     padding-left: 0;
@@ -519,7 +535,7 @@ img {
     font-size: 1rem;
   }
   .header .title {
-    font-size: 3.25rem;
+    font-size: 3rem;
   }
   .header .sub-title {
     font-size: 1.2rem;
@@ -574,5 +590,12 @@ img {
   }
   .theme-btn {
     right: calc(50vw - 24px);
+  }
+  .lang-btn {
+    top: calc(50% - 25px);
+  }
+  .lang-btn img {
+    width: 50px;
+    height: 50px;
   }
 }/*# sourceMappingURL=style.css.map */

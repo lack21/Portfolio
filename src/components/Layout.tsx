@@ -5,7 +5,7 @@ import linkedinImage from "../assets/icons/Linkedin.png";
 import youtubeImage from "../assets/icons/Youtube.png";
 import themeImage from "../assets/icons/Theme.png";
 
-function Layout() {
+function Layout({ currentLanguage }: { currentLanguage: string }) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isTheme, setIsTheme] = useState(false);
 
@@ -29,21 +29,25 @@ function Layout() {
     <>
       <nav className="nav-bar">
         <Link to="/Portfolio" className="link">
-          Home
+          {currentLanguage == "eng" ? "Home" : "მთავარი"}
         </Link>
         <Link to="/Portfolio/About" className="link">
-          About
+          {currentLanguage == "eng" ? "About" : "ჩემს შესახებ"}
         </Link>
         <Link to="/Portfolio/Projects" className="link">
-          Projects
+          {currentLanguage == "eng" ? "Projects" : "პროექტები"}
         </Link>
         <Link to="/Portfolio/Contact" className="link">
-          Contact
+          {currentLanguage == "eng" ? "Contact" : "კონტაქტი"}
         </Link>
       </nav>
       <Outlet />
       <footer className="footer">
-        <p className="text">Powered by Luka Glonti</p>
+        <p className="text">
+          {currentLanguage == "eng"
+            ? "Powered by Luka Glonti"
+            : "შემქმნელი : ლუკა ღლონტი"}
+        </p>
         <div className="icons">
           <a
             href="https://www.linkedin.com/in/lucas-glonti-a0675a24b/"

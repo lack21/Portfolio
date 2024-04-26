@@ -5,7 +5,7 @@ import { projectsArray } from "./ProjectImages";
 import { useState } from "react";
 import useIntersectionObserver from "./Observer";
 
-function Projects() {
+function Projects({ currentLanguage }: { currentLanguage: string }) {
   const [pageNumber, setPageNumber] = useState(0);
   const {} = useIntersectionObserver();
 
@@ -41,7 +41,9 @@ function Projects() {
 
   return (
     <section className="projects">
-      <h2 className="heading hidden">My Projects</h2>
+      <h2 className="heading hidden">
+        {currentLanguage == "eng" ? "My Projects" : "ჩემი პროექტები"}
+      </h2>
 
       <div className="row">
         {projectsArray[pageNumber].map((item, index) => (

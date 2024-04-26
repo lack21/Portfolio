@@ -54,6 +54,22 @@ img {
   display: block;
 }
 
+.lang-btn {
+  position: fixed;
+  top: calc(50% - 30px);
+  left: 0.5rem;
+  background-color: transparent;
+  border: none;
+
+  img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: brightness(0) saturate(0) invert(1);
+    -webkit-filter: brightness(0) saturate(0) invert(1);
+  }
+}
+
 .heading {
   font-size: 4rem;
   color: $white;
@@ -557,13 +573,13 @@ img {
     gap: 0;
 
     .link {
-      font-size: 0.925rem;
+      font-size: 0.9rem;
       padding: 0.6rem 0;
     }
   }
 
   .heading {
-    font-size: 3rem;
+    font-size: 2.85rem;
   }
 
   .footer {
@@ -588,7 +604,7 @@ img {
 
   .header {
     .title {
-      font-size: 3.25rem;
+      font-size: 3rem;
     }
 
     .sub-title {
@@ -648,5 +664,14 @@ img {
 
   .theme-btn {
     right: calc(50vw - 24px);
+  }
+
+  .lang-btn {
+    top: calc(50% - 25px);
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
   }
 }
