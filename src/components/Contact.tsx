@@ -23,7 +23,7 @@ function Contact({ currentLanguage }: { currentLanguage: string }) {
         {currentLanguage == "eng" ? "Contact Me" : "დამიკავშირდი"}
       </h2>
       <p className="sub-heading hidden">
-        {currentLanguage == "eng" ? "Email me on" : "დამიკავშირდი"}
+        {currentLanguage == "eng" ? "Email me on " : "დამიკავშირდი "}
         relaxing987fhbsnd@gmail.com
       </p>
 
@@ -38,7 +38,7 @@ function Contact({ currentLanguage }: { currentLanguage: string }) {
           name="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Name"
+          placeholder={currentLanguage == "eng" ? "Name" : "სახელი"}
           required
           className="hidden"
         />
@@ -47,7 +47,7 @@ function Contact({ currentLanguage }: { currentLanguage: string }) {
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
+          placeholder={currentLanguage == "eng" ? "Email" : "მეილი"}
           required
           className="hidden"
         />
@@ -56,7 +56,7 @@ function Contact({ currentLanguage }: { currentLanguage: string }) {
           name="subject"
           value={subject}
           onChange={(e) => setSubject(e.target.value)}
-          placeholder="Subject"
+          placeholder={currentLanguage == "eng" ? "Subject" : "თემა"}
           required
           className="hidden"
         />
@@ -65,7 +65,7 @@ function Contact({ currentLanguage }: { currentLanguage: string }) {
           rows={8}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="Message"
+          placeholder={currentLanguage == "eng" ? "Message" : "მესიჯი"}
           required
           className="hidden"
         ></textarea>

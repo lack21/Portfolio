@@ -50,7 +50,7 @@ function Layout({ currentLanguage }: { currentLanguage: string }) {
         </p>
         <div className="icons">
           <a
-            href="https://www.linkedin.com/in/lucas-glonti-a0675a24b/"
+            href="https://www.linkedin.com/in/luka-glonti-a0675a24b/"
             target="_blank"
           >
             <img src={linkedinImage} className="icon" alt="linkedin-icon" />
@@ -77,6 +77,7 @@ function Layout({ currentLanguage }: { currentLanguage: string }) {
           <div className="purple-theme" onClick={setTheme}></div>
           <div className="red-theme" onClick={setTheme}></div>
           <div className="cyan-theme" onClick={setTheme}></div>
+          <div className="yellow-theme" onClick={setTheme}></div>
         </div>
       </button>
     </>
