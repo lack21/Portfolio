@@ -77,7 +77,7 @@ function Layout({ currentLanguage }: { currentLanguage: string }) {
           <div className="purple-theme" onClick={setTheme}></div>
           <div className="red-theme" onClick={setTheme}></div>
           <div className="cyan-theme" onClick={setTheme}></div>
-          <div className="yellow-theme" onClick={setTheme}></div>
+          <div className="orange-theme" onClick={setTheme}></div>
         </div>
       </button>
     </>

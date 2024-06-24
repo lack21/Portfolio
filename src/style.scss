@@ -19,10 +19,10 @@ $midGray: rgba(120, 120, 120, 0.5);
 $lightPink: rgb(150, 100, 250);
 $halfBlue: rgba(100, 0, 175, 0.75);
 
-$purpleBackground: linear-gradient(to bottom, rgb(25, 25, 150), transparent);
-$redBackground: linear-gradient(to bottom, rgb(150, 25, 25), transparent);
-$cyanBackground: linear-gradient(to bottom, rgb(50, 150, 200), transparent);
-$yellowBackground: linear-gradient(to bottom, rgb(200, 200, 50), transparent);
+$purpleBackground: linear-gradient(to bottom, rgb(50, 50, 175), transparent);
+$redBackground: linear-gradient(to bottom, rgb(175, 50, 50), transparent);
+$cyanBackground: linear-gradient(to bottom, rgb(50, 150, 255), transparent);
+$orangeBackground: linear-gradient(to bottom, rgb(255, 100, 50), transparent);
 
 // Global Styles
 body {
@@ -50,8 +50,8 @@ body {
     background: $cyanBackground;
   }
 
-  &.yellow-theme::before {
-    background: $yellowBackground;
+  &.orange-theme::before {
+    background: $orangeBackground;
   }
 }
 
@@ -187,8 +187,8 @@ img {
         background: $cyanBackground;
       }
 
-      &.yellow-theme {
-        background: $yellowBackground;
+      &.orange-theme {
+        background: $orangeBackground;
       }
     }
   }
@@ -247,7 +247,7 @@ img {
   min-height: 100vh;
 
   .title {
-    font-size: 4.725rem;
+    font-size: 4.625rem;
     color: $white;
     opacity: 0.9;
   }
@@ -582,7 +582,7 @@ img {
     gap: 0;
 
     .link {
-      font-size: 0.9rem;
+      font-size: 0.875rem;
       padding: 0.6rem 0;
     }
   }
@@ -594,7 +594,7 @@ img {
   .footer {
     .text {
       padding-left: 0;
-      font-size: 0.925rem;
+      font-size: 0.875rem;
     }
 
     .icons {
